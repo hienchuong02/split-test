@@ -3,43 +3,136 @@ Survey
     .StylesManager
     .applyTheme("default");
 
-var json = {
-    title: "American History",
-    pages: [{
-        questions: [
+    var json = {
+        title: "John Reference check",
+        pages: [
             {
-                type: "radiogroup",
-                name: "civilwar",
-                title: "When was the Civil War?",
-                choices: [
-                    "1750-1800", "1800-1850", "1850-1900", "1900-1950", "after 1950"
-                ],
-                correctAnswer: "1850-1900"
-            },
-            {
-                type: "radiogroup",
-                name: "libertyordeath",
-                title: "Who said 'Give me liberty or give me death?'",
-                choicesOrder: "random",
-                choices: [
-                    "John Hancock", "James Madison", "Patrick Henry", "Samuel Adams"
-                ],
-                correctAnswer: "Patrick Henry"
-            },
-            {
-                type: "radiogroup",
-                name: "magnacarta",
-                title: "What is the Magna Carta?",
-                choicesOrder: "random",
-                choices: [
-                    "The foundation of the British parliamentary system", "The Great Seal of the monarchs of England", "The French Declaration of the Rights of Man", "The charter signed by the Pilgrims on the Mayflower"
-                ],
-                correctAnswer: "The foundation of the British parliamentary system"
+                questions: [
+                    {
+                        type: "text",
+                        name: "question1",
+                        title: "What is John Position?"
+                    },
+                    {
+                        type: "text",
+                        name: "question2",
+                        title: "Can you describe the job responsibilities?"
+                    },
+                    {
+                        type: "radiogroup",
+                        name: "question3",
+                        title: "Could I briefly review John resume?",
+                        choices: [
+                        {
+                        value: "item1",
+                        text: "Yes"
+                        },
+                        {
+                        value: "item2",
+                        text: "No"
+                        }
+                        ]
+                    },
+                    {
+                        type: "text",
+                        name: "question4",
+                        title: "What was his starting and ending salary?"
+                    },
+                    {
+                        type: "radiogroup",
+                        name: "question4",
+                        title: "Did he miss a lot of work?  ",
+                        choices: [
+                         {
+                          value: "item1",
+                          text: "Yes"
+                         },
+                         {
+                          value: "item2",
+                          text: "No"
+                         }
+                        ]
+                    },
+                    {
+                        type: "radiogroup",
+                        name: "question5",
+                        title: "Was he frequently late? ",
+                        choices: [
+                        {
+                        value: "item1",
+                        text: "Yes"
+                        },
+                        {
+                        value: "item2",
+                        text: "No"
+                        }
+                        ]
+                    },
+                    {
+                        type: "text",
+                        name: "question6",
+                        title: "How did John support co-workers?"
+                    },
+                    {
+                        type: "radiogroup",
+                        name: "question7",
+                        title: "Did he prefer to work on a team or independently?",
+                        choices: [
+                         {
+                          value: "item1",
+                          text: "Team"
+                         },
+                         {
+                          value: "item2",
+                          text: "Independently"
+                         },
+                         {
+                          value: "item3",
+                          text: "Both"
+                        }
+                        ]
+                    },
+                    {
+                        type: "radiogroup",
+                        name: "question2",
+                        title: "Is he currently working in a group?",
+                        choices: [
+                        {
+                        value: "item1",
+                        text: "Yes"
+                        },
+                        {
+                        value: "item2",
+                        text: "No"
+                        }
+                        ]
+                    },
+                    {
+                        type: "radiogroup",
+                        name: "question1",
+                        title: "How was long he spend everyday to do the project?",
+                        hasOther: true,
+                        choices: [
+                        {
+                        value: "item1",
+                        text: "8hrs"
+                        },
+                        {
+                        value: "item2",
+                        text: "10hrs"
+                        },
+                        {
+                        value: "item3",
+                        text: "Less than 8hrs"
+                        }
+                        ],
+                        otherText: "More than 10hrs"
+                    }
+                ]
             }
-        ]
-    }],
-    completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>"
-};
+        ],
+        completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>"
+    };
 
 window.survey = new Survey.Model(json);
 
